@@ -1,4 +1,4 @@
-📁 5. README — /notes
+
 Notes Folder
 
 Contains planning notes, brainstorming drafts, and development logs.
