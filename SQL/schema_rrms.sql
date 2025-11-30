@@ -28,6 +28,15 @@ CREATE TABLE contractstatus (
 	description				TEXT
 );
 
+--1.4 CHARGE STATUS
+
+CREATE TABLE chargestatus (
+	charge_status_id		SERIAL PRIMARY KEY,
+	status_code 			VARCHAR(100), 		--'OPEN', 'PARTIALLY_PAID', 'PAID', ...
+	description				TEXT
+);
+
+
 
 --=========================================
 --1. MASTER DATA
