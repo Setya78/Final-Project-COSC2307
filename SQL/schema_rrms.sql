@@ -36,13 +36,19 @@ CREATE TABLE chargestatus (
 	description				TEXT
 );
 
+--1.5 PAYMENT METHOD
 
+CREATE TABLE paymentmethod (
+	payment_method_id		SERIAL PRIMARY KEY,
+	method_code 			VARCHAR(100), 		--'CASH', 'INTERAC', 'BANK_TRANSFER', ...
+	description				TEXT
+);
 
 --=========================================
---1. MASTER DATA
+--2. MASTER DATA
 --=========================================
 
---1.1 LANDLORD
+--2.1 LANDLORD
 
 CREATE TABLE landlord (
 	landlord_id		SERIAL PRIMARY KEY,
@@ -51,20 +57,26 @@ CREATE TABLE landlord (
 	business_name	VARCHAR(150),
 	email			VARCHAR(150)UNIQUE NOT NULL,
 	phone			VARCHAR(20),
-	interac_contact	VARCHAR(150),
+	interac_contact	VARCHAR(150)
 );
 
 --1.2 PROPERTY
 CREATE TABLE property (
 	property_id		SERIAL PRIMARY KEY,
-	lanlord_id 		INT NOT NULL REFERENCES landlord(lanlord_id),
+	landlord_id 	INT NOT NULL REFERENCES landlord(landlord_id),
 	property_name	VARCHAR(150),
 	property_type	VARCHAR(50),
 	full_address	TEXT,
-	post_code		VARCHAR(15),
+	post_code		VARCHAR(15)
 );
 
--- 1.3 UNIT
+
+--1.3 UNIT
 CREATE TABLE unit (
-	unit_id 		SERIAL NUMBER KEY,
-	)
+	unit_id			SERIAL PRIMARY KEY,
+	property_id 	INT NOT NULL REFERENCES property(property_id),
+	unit_code		VARCHAR(50),
+	capacity		INT,
+	unit_type		VARCHAR(50),
+	unit_status		VARCHAR(50)
+);
