@@ -169,4 +169,12 @@ CREATE TABLE unitasset (
 	condition				VARCHAR(100)
 );
 
+--4.2 UNIIT UTILITY
+CREATE TABLE unitutility (
+	unit_utility_id			SERIAL PRIMARY KEY,
+	unit_id					INT NOT NULL REFERENCES unit(unit_id),
+	utility_type			VARCHAR(100), --Hydro, Gas, Electricity, Internet, ...
+	billing_method			VARCHAR(100) --include in rent, separate bill, etc
+);
+
 
