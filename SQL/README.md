@@ -4,14 +4,14 @@ This folder contains all PostgreSQL scripts used to build and populate the Room 
 
 Files Included
 
-schema.sql
+schema_rrms.sql
 Defines all database tables, keys, and constraints.
 
-indexes.sql
+indexes_rrms.sql
 Indexes created to improve query performance.
 
-seed_data.sql
-Sample dataset (50–200 rows) for testing queries and generating reports.
+seed_rrms.sql
+Sample dataset (2-3 rows) for testing queries and generating reports.
 
 sample_queries.sql
 Demonstration queries used in the final video and project report.
