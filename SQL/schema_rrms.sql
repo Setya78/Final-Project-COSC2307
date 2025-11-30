@@ -93,3 +93,34 @@ CREATE TABLE tenant (
     id_number        	VARCHAR(100)
 );
 
+--=========================================
+--3. CORE TRANSACTION TABLES
+--=========================================
+
+--3.1 CONTRACT
+CREATE TABLE contract (
+	contract_id				SERIAL PRIMARY KEY,
+	unit_id			 		INT NOT NULL REFERENCES unit(unit_id),
+    tenant_id       		INT NOT NULL REFERENCES tenant(tenant_id),
+    penalty_rule_id			INT NOT NULL REFERENCES penaltyrule(penalty_rule_id),
+    billing_cycle_type_id	INT NOT NULL REFERENCES billingcycletype(billing_cycle_type_id),
+	start_date				DATE NOT NULL,
+	end_date				DATE,
+	base_rent_amount		NUMERIC(10,2) NOT NULL,
+	billing_day				INT, 			--1-31 invoicing day
+	contract_status_id		INT NOT NULL REFERENCES contractstatus(contract_status_id),
+
+--Security deposit
+	security_deposit_amount			NUMERIC(10,2),
+	security_deposit_status 		VARCHAR(50), --HELD/PARTIAL_REFUND/FULL_REFUND/FORFEITED
+	security_deposit_received_date	DATE,
+	security_deposit_refund_date	DATE,
+
+--Reminder configuration
+	reminder_days_before_due		INT,	--example 3 days before due date
+	reminder_days_after_due			INT,	--example 5 days after due date
+
+	CHECK (billing_day IS NULL OR (billing_day BETWEEN 1 AND 31))
+);
+
+
