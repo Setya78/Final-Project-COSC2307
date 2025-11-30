@@ -123,4 +123,23 @@ CREATE TABLE contract (
 	CHECK (billing_day IS NULL OR (billing_day BETWEEN 1 AND 31))
 );
 
+--3.2 RENT CHARGE
+CREATE TABLE rentcharge (
+	rent_charge_id			SERIAL PRIMARY KEY,
+	contract_id				INT NOT NULL REFERENCES contract(contract_id),
+	charge_period			VARCHAR(20),		--example '2025-Jan'
+	period_start			DATE,
+	period_end				DATE,
+	base_amount				NUMERIC(10,2),
+	penalty_amount			NUMERIC(10,2),
+	total_amount_due		NUMERIC(10,2),
+	charge_status_id		INT REFERENCES chargestatus(charge_status_id),
+
+
+	--Invoice Fields
+	invoice_number			VARCHAR(50) UNIQUE,
+	invoice_sent_at			TIMESTAMP,
+	last_reminder_sent_at	TIMESTAMP
+);
+
 
