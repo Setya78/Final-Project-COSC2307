@@ -44,6 +44,7 @@ CREATE TABLE paymentmethod (
 	description				TEXT
 );
 
+
 --=========================================
 --2. MASTER DATA
 --=========================================
@@ -70,7 +71,6 @@ CREATE TABLE property (
 	post_code		VARCHAR(15)
 );
 
-
 --1.3 UNIT
 CREATE TABLE unit (
 	unit_id			SERIAL PRIMARY KEY,
@@ -80,3 +80,16 @@ CREATE TABLE unit (
 	unit_type		VARCHAR(50),
 	unit_status		VARCHAR(50)
 );
+
+--1.4 TENANT
+CREATE TABLE tenant (
+	tenant_id			SERIAL PRIMARY KEY,
+	first_name      	 VARCHAR(100) NOT NULL,
+    last_name       	 VARCHAR(100) NOT NULL,
+    tenant_occupation 	VARCHAR(100),
+    email           	 VARCHAR(150) UNIQUE,
+    phone           	 VARCHAR(20),
+    id_type          	VARCHAR(50),
+    id_number        	VARCHAR(100)
+);
+
