@@ -1,3 +1,18 @@
+--=========================================
+--1. REFERENCE / LOOKUP TABLES
+--=========================================
+
+--1.1 PENALTY RULE
+
+CREATE TABLE penaltyrule (
+	penalty_rule_id		SERIAL PRIMARY KEY,
+	penalty_type 		VARCHAR(100), 		--FIXED/PERCENTAGE
+	penalty_amount		NUMERIC(10,2),
+	grace_period_days	INT,
+	rule_description	TEXT,
+);
+
+
 
 
 --=========================================
