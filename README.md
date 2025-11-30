@@ -1,6 +1,9 @@
 Final-Project-COSC2307
+
 Database Programming – COSC2307 Final Project
+
 Student: Deny Setiawan Rahardjo (Jojo)
+
 ID Student: 5149978
 
 This project implements a fully functional PostgreSQL database for a Room Rental Management System (RRMS).
