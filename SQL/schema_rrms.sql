@@ -142,4 +142,17 @@ CREATE TABLE rentcharge (
 	last_reminder_sent_at	TIMESTAMP
 );
 
+--3.3 PAYMENT
+CREATE TABLE payment (
+	payment_id				SERIAL PRIMARY KEY,
+	rent_charge_id			INT NOT NULL REFERENCES rentcharge(rent_charge_id),
+	payment_date			DATE,
+	amount_paid				NUMERIC(10,2),
+	payment_method_id		INT NOT NULL REFERENCES paymentmethod(payment_method_id),
+	payment_status			VARCHAR(50),  --'POSTED, 'PENDING, 'VOID','...'
+	payment_category		VARCHAR(50),  --'RENT'. 'SECURITY DEPOSIT IN', 'SECURITY DEPOSIT REFUND', '...' 
+	reference_number 		VARCHAR(100)  --bank/e transfer reference number
+
+);
+
 
