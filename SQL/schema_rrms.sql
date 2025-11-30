@@ -9,7 +9,7 @@ CREATE TABLE penaltyrule (
 	penalty_type 		VARCHAR(100), 		--FIXED/PERCENTAGE
 	penalty_amount		NUMERIC(10,2),
 	grace_period_days	INT,
-	rule_description	TEXT,
+	rule_description	TEXT
 );
 
 
