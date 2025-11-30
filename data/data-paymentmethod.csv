@@ -1,0 +1,4 @@
+"payment_method_id","method_code","description"
+1,"CASH","Cash payment"
+2,"INTERAC","Interac e-transfer"
+3,"CARD","Credit or debit card"

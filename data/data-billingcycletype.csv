@@ -1,0 +1,3 @@
+"billing_cycle_type_id","name_billing_cycle","description"
+1,"MONTHLY","Monthly billing cycle"
+2,"WEEKLY","Weekly billing cycle"

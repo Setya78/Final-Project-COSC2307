@@ -1,0 +1,4 @@
+"charge_status_id","status_code","description"
+1,"OPEN","Not fully paid"
+2,"PAID","Fully paid"
+3,"PARTIAL","Partially paid"

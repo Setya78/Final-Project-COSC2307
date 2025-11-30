@@ -1,0 +1,4 @@
+"contract_status_id","status_code","description"
+1,"ACTIVE","Active contract"
+2,"ENDED","Ended contract"
+3,"CANCELLED","Cancelled by tenant or landlord"
