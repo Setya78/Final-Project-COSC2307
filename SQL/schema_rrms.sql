@@ -130,6 +130,7 @@ CREATE TABLE rentcharge (
 	charge_period			VARCHAR(20),		--example '2025-Jan'
 	period_start			DATE,
 	period_end				DATE,
+	due_date				DATE,
 	base_amount				NUMERIC(10,2),
 	penalty_amount			NUMERIC(10,2),
 	total_amount_due		NUMERIC(10,2),
@@ -191,3 +192,17 @@ CREATE TABLE renctcharge_notification (
 	status					VARCHAR(20) NOT NULL,  --SUCCESS, FAILED
 	error_message			TEXT
 );
+
+
+-- =======================================================
+-- 6. INDEXES 
+-- =======================================================
+
+CREATE INDEX idx_property_landlord    ON property(landlord_id);
+CREATE INDEX idx_unit_property        ON unit(property_id);
+CREATE INDEX idx_contract_unit        ON contract(unit_id);
+CREATE INDEX idx_contract_tenant      ON contract(tenant_id);
+CREATE INDEX idx_rentcharge_contract  ON rentcharge(contract_id);
+CREATE INDEX idx_rentcharge_due_date  ON rentcharge(due_date);
+CREATE INDEX idx_payment_rentcharge   ON payment(rent_charge_id);
+CREATE INDEX idx_notification_rent    ON rentcharge_notification(rent_charge_id);
