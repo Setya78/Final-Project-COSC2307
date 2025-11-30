@@ -12,7 +12,21 @@ CREATE TABLE penaltyrule (
 	rule_description	TEXT
 );
 
+--1.2 BILLING CYCLE TYPE 
 
+CREATE TABLE billingcycletype (
+	billing_cycle_type_id	SERIAL PRIMARY KEY,
+	name_billing_cycle 		VARCHAR(50), 		 -- 'MONTHLY', 'WEEKLY', ...
+	description		    	TEXT
+);
+
+--2.3 CONTRACT STATUS
+
+CREATE TABLE contractstatus (
+	contract_status_id		SERIAL PRIMARY KEY,
+	status_code 			VARCHAR(100), 		--'ACTIVE', 'ENDED', 'CANCELLED', ...
+	description				TEXT
+);
 
 
 --=========================================
