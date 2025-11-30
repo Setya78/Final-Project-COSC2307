@@ -22,3 +22,21 @@ VALUES
   ('CASH', 'Cash payment'),
   ('INTERAC', 'Interac e-transfer');
 
+
+-- 2) MASTER
+INSERT INTO landlord (first_name, last_name, business_name, email, phone, interac_contact)
+VALUES 
+  ('Daniel', 'Roberto', 'DR Rentals', 'droberto@example.com', '7051112222', 'daniel.interac@example.com');
+
+INSERT INTO property (landlord_id, property_name, property_type, full_address, post_code)
+VALUES 
+  (1, 'Queen Street House', 'House', '123 Queen St, Sault Ste. Marie, ON', 'P6A 1A1');
+
+INSERT INTO unit (property_id, unit_code, capacity, unit_type, unit_status)
+VALUES
+  (1, 'Unit-101', 1, 'Room', 'OCCUPIED'),
+  (1, 'Unit-102', 1, 'Room', 'VACANT');
+
+INSERT INTO tenant (first_name, last_name, tenant_occupation, email, phone, id_type, id_number)
+VALUES
+  ('Jeremy', 'Sunn', 'Student', 'sunn@example.com', '7053334444', 'Passport', 'P1234567');
