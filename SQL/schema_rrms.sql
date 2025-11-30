@@ -178,3 +178,16 @@ CREATE TABLE unitutility (
 );
 
 
+--=========================================
+--5. NOTIFICATION LOG (EMAIL / REMINDER)
+--=========================================
+
+CREATE TABLE renctcharge_notification (
+	notification_id			SERIAL PRIMARY KEY,
+	rent_charge_id			INT NOT NULL REFERENCES rentcharge(rent_charge_id),
+	notification_type		VARCHAR(30) NOT NULL, -- INOVICE SENT, DUE REMINDER, ...
+	channel					VARCHAR(20) NOT NULL,  --Email, ...
+	sent_at					TIMESTAMP NOT NULL,
+	status					VARCHAR(20) NOT NULL,  --SUCCESS, FAILED
+	error_message			TEXT
+);
