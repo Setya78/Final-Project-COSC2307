@@ -20,7 +20,7 @@ CREATE TABLE billingcycletype (
 	description		    	TEXT
 );
 
---2.3 CONTRACT STATUS
+--1.3 CONTRACT STATUS
 
 CREATE TABLE contractstatus (
 	contract_status_id		SERIAL PRIMARY KEY,
