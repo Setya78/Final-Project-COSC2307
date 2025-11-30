@@ -3,21 +3,12 @@ Video Folder
 
 Contains the recorded demonstration video required for the final submission.
 
-File Included:
+Link Video Content File Here :
 
-demo_video.mp4
+1. SQL Query Documentation : https://drive.google.com/file/d/1cHgAAKU9aHI593L_aT4VPAj8mCGXYikY/view?usp=drive_link 
 
-Video Content:
+2. Power BI dashboard overview 
 
-Introduction to project
-
-PostgreSQL schema walkthrough
- 
-CRUD operations demo
-
-JOIN + GROUP BY + HAVING queries
-
-Power BI dashboard overview
 
 This video serves as the final interactive proof-of-work.
 
