@@ -156,3 +156,17 @@ CREATE TABLE payment (
 );
 
 
+--=========================================
+--4. UNIT ASSET AND UTILITY
+--=========================================
+
+--4.1 UNIIT ASSET
+CREATE TABLE unitasset (
+	unit_asset_id			SERIAL PRIMARY KEY,
+	unit_id					INT NOT NULL REFERENCES unit(unit_id),
+	asset_name				VARCHAR(150),
+	quantity				INT,
+	condition				VARCHAR(100)
+);
+
+
