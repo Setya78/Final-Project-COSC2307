@@ -1,0 +1,18 @@
+Total Rent = SUM(public_rentcharge[total_amount_due])
+
+Outstanding Balance =
+SUM(public_rentcharge[total_amount_due]) -
+SUM(public_payment[amount_paid])
+
+Total Payment = SUM(public_payment[amount_paid])
+
+Total Units = COUNTROWS(public_unit)
+
+Occupied Units =
+CALCULATE(
+COUNTROWS(public_unit),
+public_unit[unit_status] = "Occupied"
+)
+
+Occupancy Rate =
+DIVIDE([Occupied Units], [Total Units], 0)
