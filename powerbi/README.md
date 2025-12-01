@@ -59,5 +59,15 @@ The dashboard connects to:
 This dashboard is included as part of the final project deliverables to demonstrate the ability to:
 - Extract and analyze data from a relational database  
 - Build meaningful business insights from a rental management system  
-- Present key performance metrics using Power BI  
+- Present key performance metrics using Power BI
+
+
+---
+  # Power BI Measures for RRMS Dashboard
+
+This folder contains the DAX measures used to generate the analytics in the Power BI report for the Room Rental Management System (RRMS).  
+These measures power the KPI cards, charts, and calculations inside the dashboard.
+
+
+
 
